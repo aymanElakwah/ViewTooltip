@@ -192,9 +192,9 @@ public class ViewTooltip {
                         @Override
                         public boolean onPreDraw() {
 
-                            tooltip_view.setup(rect, decorView.getWidth());
-
                             tooltip_view.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                            tooltip_view.setup(rect, decorView.getWidth());
 
                             return false;
                         }
@@ -851,8 +851,8 @@ public class ViewTooltip {
                 getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
                     @Override
                     public boolean onPreDraw() {
-                        onSetup(myRect);
                         getViewTreeObserver().removeOnPreDrawListener(this);
+                        onSetup(myRect);
                         return false;
                     }
                 });
